@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:ivf_project/app/constants/app_module.dart';
+import 'package:kiwi/kiwi.dart';
+import 'app/routes/app_pages.dart';
+
+late KiwiContainer app;
+GetStorage box = GetStorage();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  app = KiwiContainer();
+  setup();
+  runApp(
+    GetMaterialApp(
+      theme: ThemeData(fontFamily: "kanu", canvasColor: Colors.white),
+      title: "Application",
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+    ),
+  );
+}

@@ -1,0 +1,58 @@
+name: ivf_project
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.16.2 <3.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  get: 4.6.1
+  flutter_svg:
+  contacts_service: ^0.6.3
+  cached_network_image:
+  table_calendar: ^3.0.6
+  percent_indicator: ^4.2.2
+  showcaseview: ^1.1.8
+  flutter_inset_box_shadow:
+  permission_handler: ^9.2.0
+  scrollable_positioned_list: ^0.3.2
+  url_launcher: ^6.1.5
+  grouped_list: ^5.1.2
+  pinput:
+  get_storage:
+  kiwi:
+  connectivity:
+  dio:
+  intl:
+  dots_indicator:
+  flutter_neumorphic:
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  lints: 1.0.1
+  kiwi_generator:
+  build_runner:
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/fonts/
+    - assets/patient/
+
+  fonts:
+    - family: kanu
+      fonts:
+        - asset: assets/fonts/DMSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/DMSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/DMSans-Regular.ttf
+          weight: 400
