@@ -24,8 +24,10 @@ TextFormField getTextField({
   String errorText = "",
   Function(String)? onChange,
   FormFieldValidator<String>? validation,
+  FocusNode? focusNode,
 }) {
   return TextFormField(
+    focusNode: focusNode,
     controller: textEditingController,
     obscureText: textVisible,
     textInputAction: textInputAction,

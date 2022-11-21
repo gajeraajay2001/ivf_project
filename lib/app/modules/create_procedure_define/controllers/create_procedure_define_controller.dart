@@ -20,6 +20,7 @@ class CreateProcedureDefineController extends GetxController {
   RxBool isTourStarted = false.obs;
   RxBool tourViewed = false.obs;
   RxList<ProcedureTypeModel> procedureTypeList = RxList<ProcedureTypeModel>([]);
+  FocusNode textFieldFocusNode = FocusNode();
   @override
   void onInit() {
     callProceduresListingApi(context: Get.context!);

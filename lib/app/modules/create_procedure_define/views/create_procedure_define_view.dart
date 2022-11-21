@@ -331,6 +331,16 @@ class CreateProcedureDefineView
                                               .procedureNameShowCaseKey.value,
                                           description:
                                               "Give a name to your procedure",
+                                          onTargetClick: () {
+                                            print("Clicked");
+                                            controller.textFieldFocusNode
+                                                .requestFocus();
+                                          },
+                                          onToolTipClick: () {
+                                            controller.textFieldFocusNode
+                                                .requestFocus();
+                                          },
+                                          disposeOnTap: true,
                                           overlayPadding: EdgeInsets.symmetric(
                                               vertical: MySize.getHeight(10),
                                               horizontal: MySize.getWidth(10)),
@@ -338,6 +348,8 @@ class CreateProcedureDefineView
                                           overlayOpacity: 0.2,
                                           showcaseBackgroundColor: Colors.white,
                                           child: getTextField(
+                                            focusNode:
+                                                controller.textFieldFocusNode,
                                             textEditingController: controller
                                                 .procedureNameController,
                                             onChange: (val) {
