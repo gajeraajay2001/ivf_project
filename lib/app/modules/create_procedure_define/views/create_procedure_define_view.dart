@@ -333,10 +333,16 @@ class CreateProcedureDefineView
                                               "Give a name to your procedure",
                                           onTargetClick: () {
                                             print("Clicked");
+                                            controller.tourViewed.value = true;
+                                            controller.tourViewed.refresh();
+                                            FocusScope.of(context).unfocus();
                                             controller.textFieldFocusNode
                                                 .requestFocus();
                                           },
                                           onToolTipClick: () {
+                                            controller.tourViewed.value = true;
+                                            controller.tourViewed.refresh();
+                                            FocusScope.of(context).unfocus();
                                             controller.textFieldFocusNode
                                                 .requestFocus();
                                           },

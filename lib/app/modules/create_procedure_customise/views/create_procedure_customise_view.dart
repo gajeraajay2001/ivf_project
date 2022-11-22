@@ -203,7 +203,7 @@ class CreateProcedureCustomiseView
         ));
   }
 
-  /*** Events Boxes ***/
+  /// Events Boxes
 
   Widget getFirstEventBoxForTour(
       {required BuildContext context,
@@ -302,7 +302,9 @@ class CreateProcedureCustomiseView
                             height: MySize.getHeight(40),
                             width: MySize.getWidth(200),
                             onTargetClick: () {
-                              ShowCaseWidget.of(context).next();
+                              ShowCaseWidget.of(context).startShowCase([
+                                controller.nextButtonShowCaseKey.value,
+                              ]);
                             },
                             container: Stack(
                               children: [
@@ -592,7 +594,9 @@ class CreateProcedureCustomiseView
                           height: MySize.getHeight(40),
                           width: MySize.getWidth(200),
                           onTargetClick: () {
-                            ShowCaseWidget.of(context).next();
+                            ShowCaseWidget.of(context).startShowCase([
+                              controller.nextButtonShowCaseKey.value,
+                            ]);
                           },
                           container: Stack(
                             children: [
