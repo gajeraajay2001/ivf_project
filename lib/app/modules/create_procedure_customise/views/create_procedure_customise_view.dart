@@ -302,6 +302,9 @@ class CreateProcedureCustomiseView
                             height: MySize.getHeight(40),
                             width: MySize.getWidth(200),
                             onTargetClick: () {
+                              controller.scrollController.jumpTo(
+                    controller.scrollController.position.maxScrollExtent);
+                
                               ShowCaseWidget.of(context).startShowCase([
                                 controller.nextButtonShowCaseKey.value,
                               ]);
@@ -593,7 +596,9 @@ class CreateProcedureCustomiseView
                           key: controller.deleteEventsShowCaseKey.value,
                           height: MySize.getHeight(40),
                           width: MySize.getWidth(200),
-                          onTargetClick: () {
+                          onTargetClick: () {controller.scrollController.jumpTo(
+                    controller.scrollController.position.maxScrollExtent);
+                
                             ShowCaseWidget.of(context).startShowCase([
                               controller.nextButtonShowCaseKey.value,
                             ]);
