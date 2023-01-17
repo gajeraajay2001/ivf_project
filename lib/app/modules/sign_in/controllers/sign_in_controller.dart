@@ -38,8 +38,9 @@ class SignInController extends GetxController {
         app.resolve<CustomDialogs>().hideCircularDialog(context);
 
         if (response["status_code"] == 200) {
+          box.write(ArgumentConstant.phoneCode, "+$phoneCode");
           Get.toNamed(Routes.OTP_VERIFICATION, arguments: {
-            "mobileNumber": "+91${mobileController.text.trim()}"
+            "mobileNumber": "+$phoneCode${mobileController.text.trim()}"
           });
         } else {
           app

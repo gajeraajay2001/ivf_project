@@ -40,6 +40,7 @@ class ApiConstant {
 class ArgumentConstant {
   static String userRole = "userRole";
   static const mobileNumber = "mobileNumber";
+  static const phoneCode = "phoneCode";
   static const doctorMobileNumber = "doctorMobileNumber";
   static const token = "token";
   static const userId = "userId";

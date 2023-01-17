@@ -123,27 +123,28 @@ class CreateAccountView extends GetWidget<CreateAccountController> {
                             SizedBox(height: MySize.size8),
                             Row(
                               children: [
-                                Container(
-                                  height: MySize.getHeight(48),
-                                  width: MySize.getWidth(55),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(MySize.size10!),
-                                      bottomLeft:
-                                          Radius.circular(MySize.size10!),
-                                    ),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    "+91",
-                                    style: TextStyle(),
-                                  ),
-                                ),
+                                //TODO: Uncomment phone code
+                                // Container(
+                                //   height: MySize.getHeight(48),
+                                //   width: MySize.getWidth(55),
+                                //   decoration: BoxDecoration(
+                                //     color: Colors.white,
+                                //     borderRadius: BorderRadius.only(
+                                //       topLeft: Radius.circular(MySize.size10!),
+                                //       bottomLeft:
+                                //           Radius.circular(MySize.size10!),
+                                //     ),
+                                //   ),
+                                //   alignment: Alignment.center,
+                                //   child: Text(
+                                //     box.read(ArgumentConstant.phoneCode) ?? "",
+                                //     style: TextStyle(),
+                                //   ),
+                                // ),
                                 SizedBox(width: MySize.getWidth(1)),
                                 InkWell(
                                   child: Container(
-                                    width: MySize.getWidth(263),
+                                    width: MySize.getWidth(315),
                                     height: MySize.getHeight(48),
                                     decoration: BoxDecoration(
                                         color: Colors.white,
