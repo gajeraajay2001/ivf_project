@@ -8,6 +8,7 @@ import 'package:ivf_project/main.dart';
 
 class SignInController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey();
+  RxString countryCode = "91".obs;
   TextEditingController mobileController = TextEditingController();
   @override
   void onInit() {
@@ -22,10 +23,10 @@ class SignInController extends GetxController {
   @override
   void onClose() {}
 
-  callLoginApi({required BuildContext context}) {
+  callLoginApi({required BuildContext context, required String phoneCode}) {
     app.resolve<CustomDialogs>().showCircularDialog(context);
     Map<String, dynamic> dict = {};
-    dict["mobile_number"] = "+91${mobileController.text.trim()}";
+    dict["mobile_number"] = "+$phoneCode${mobileController.text.trim()}";
     return NetworkClient.getInstance.callApi(
       context,
       baseUrl,

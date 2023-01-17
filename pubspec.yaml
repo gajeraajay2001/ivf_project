@@ -10,6 +10,7 @@ dependencies:
   get: 4.6.1
   flutter_svg:
   contacts_service: ^0.6.3
+  country_picker: ^2.0.19
   cached_network_image:
   table_calendar: ^3.0.6
   percent_indicator: ^4.2.2
