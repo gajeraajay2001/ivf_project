@@ -1,10 +1,13 @@
 import 'dart:async';
 
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:ivf_project/app/constants/api_constant.dart';
 import 'package:ivf_project/app/constants/sizeConstant.dart';
 import 'package:ivf_project/app/routes/app_pages.dart';
+
+import '../../../services/notification_handler.dart';
 
 class SplashController extends GetxController {
   GetStorage box = GetStorage();

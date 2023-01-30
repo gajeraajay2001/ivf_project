@@ -16,7 +16,7 @@ dependencies:
   percent_indicator: ^4.2.2
   showcaseview: ^1.1.8
   flutter_inset_box_shadow:
-  permission_handler: ^9.2.0
+  permission_handler:
   scrollable_positioned_list: ^0.3.2
   url_launcher: ^6.1.5
   grouped_list: ^5.1.2
@@ -33,6 +33,8 @@ dependencies:
   firebase_messaging: ^14.2.1
   flutter_notification_channel: ^2.0.0
   firebase_core: ^2.4.1
+  awesome_notifications: ^0.7.4+1
+  http: ^0.13.5
 
 dev_dependencies: 
   flutter_lints: ^1.0.0
