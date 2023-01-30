@@ -9,6 +9,9 @@ late KiwiContainer app;
 GetStorage box = GetStorage();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await GetStorage.init();
   app = KiwiContainer();
   setup();
