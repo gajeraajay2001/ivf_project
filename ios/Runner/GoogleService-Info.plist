@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>248514443235-a4gero3e2op6pmvgqnou6kclfl0fs37c.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.248514443235-a4gero3e2op6pmvgqnou6kclfl0fs37c</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDyYreRy_PvnvkezLm14g9W2-0rqbsEOms</string>
+	<key>GCM_SENDER_ID</key>
+	<string>248514443235</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ivfproject.ivfProject</string>
+	<key>PROJECT_ID</key>
+	<string>ivf-project-9993f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ivf-project-9993f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:248514443235:ios:607b6b7cb1723f1e8812d6</string>
+	<key>DATABASE_URL</key>
+	<string>https://ivf-project-9993f-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "248514443235",
+    "firebase_url": "https://ivf-project-9993f-default-rtdb.firebaseio.com",
+    "project_id": "ivf-project-9993f",
+    "storage_bucket": "ivf-project-9993f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248514443235:android:1076b78926d490768812d6",
+        "android_client_info": {
+          "package_name": "com.ivf_project.ivf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248514443235-ua9qsgcq18hkgmtr2rdf7nh22s3b4hg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4H94qNMnA37gpBXHfT37McIKwYaG8sqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248514443235-ua9qsgcq18hkgmtr2rdf7nh22s3b4hg5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "248514443235-a4gero3e2op6pmvgqnou6kclfl0fs37c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ivfproject.ivfProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
