@@ -12,8 +12,20 @@ import '../../../services/notification_handler.dart';
 class SplashController extends GetxController {
   GetStorage box = GetStorage();
   String token = "";
+  String id = "";
+  String message = "";
+
   @override
   void onInit() {
+    AwesomeNotifications().setListeners(
+      onActionReceivedMethod: AwesomeNotificationHandler.onActionReceivedMethod,
+      onNotificationCreatedMethod:
+          AwesomeNotificationHandler.onNotificationCreatedMethod,
+      onNotificationDisplayedMethod:
+          AwesomeNotificationHandler.onNotificationDisplayedMethod,
+      onDismissActionReceivedMethod:
+          AwesomeNotificationHandler.onDismissActionReceivedMethod,
+    );
     box.write(ArgumentConstant.tourStep1Started, false);
     box.write(ArgumentConstant.tourStep1Completed, false);
     box.write(ArgumentConstant.tourStep2Started, false);
@@ -21,17 +33,28 @@ class SplashController extends GetxController {
     box.write(ArgumentConstant.tourStep3Started, false);
     box.write(ArgumentConstant.tourStep3Completed, false);
     box.write(ArgumentConstant.allTourStepsJustCompleted, false);
+
+    if (!isNullEmptyOrFalse(Get.arguments)) {
+      id = Get.arguments["id"];
+      if(!isNullEmptyOrFalse(Get.arguments["data"])){
+        message = Get.arguments["data"];
+      }
+    }
+
     if (box.read(ArgumentConstant.token) != null) {
       // box.write(ArgumentConstant.token, "");
       token = box.read(ArgumentConstant.token);
     }
     Timer(
       Duration(seconds: 3),
-      () => (isNullEmptyOrFalse(token))
-          ? Get.offAllNamed(Routes.SIGN_IN)
-          : (box.read(ArgumentConstant.userRole) == Role.patient)
-              ? Get.offAllNamed(Routes.PATIENT_HOME_SCREEN)
-              : Get.offAllNamed(Routes.HOME_SCREEN),
+      () => (!isNullEmptyOrFalse(id))
+          ? Get.offAllNamed(Routes.NOTIFICATION_REDIRECTION_SCREEN,
+              arguments: {"id": id,"data":message})
+          : (isNullEmptyOrFalse(token))
+              ? Get.offAllNamed(Routes.SIGN_IN)
+              : (box.read(ArgumentConstant.userRole) == Role.patient)
+                  ? Get.offAllNamed(Routes.PATIENT_HOME_SCREEN)
+                  : Get.offAllNamed(Routes.HOME_SCREEN),
     );
     super.onInit();
   }

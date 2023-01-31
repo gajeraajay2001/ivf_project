@@ -49,6 +49,8 @@ abstract class Routes {
   static const PRIVACY_POLICY = _Paths.PRIVACY_POLICY;
   static const TERMS_USAGES = _Paths.TERMS_USAGES;
   static const PATIENT_MY_PROFILE = _Paths.PATIENT_MY_PROFILE;
+  static const NOTIFICATION_REDIRECTION_SCREEN =
+      _Paths.NOTIFICATION_REDIRECTION_SCREEN;
 }
 
 abstract class _Paths {
@@ -93,4 +95,6 @@ abstract class _Paths {
   static const PRIVACY_POLICY = '/privacy-policy';
   static const TERMS_USAGES = '/terms-usages';
   static const PATIENT_MY_PROFILE = '/patient-my-profile';
+  static const NOTIFICATION_REDIRECTION_SCREEN =
+      '/notification-redirection-screen';
 }

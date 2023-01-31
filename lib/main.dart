@@ -1,12 +1,15 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:ivf_project/app/constants/api_constant.dart';
 import 'package:ivf_project/app/constants/app_module.dart';
 import 'package:ivf_project/app/services/notification_service.dart';
 import 'package:kiwi/kiwi.dart';
 import 'app/routes/app_pages.dart';
+import 'app/services/notification_handler.dart';
 import 'firebase_options.dart';
 
 @pragma('vm:entry-point')
@@ -36,6 +39,7 @@ void main() async {
     GetMaterialApp(
       theme: ThemeData(fontFamily: "kanu", canvasColor: Colors.white),
       title: "Application",
+      navigatorKey: ApiConstant.globalKey,
       debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,

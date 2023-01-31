@@ -1,10 +1,12 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_notification_channel/flutter_notification_channel.dart';
 import 'package:flutter_notification_channel/notification_visibility.dart';
+import 'package:ivf_project/app/constants/sizeConstant.dart';
 import 'package:ivf_project/app/services/notification_handler.dart';
 import 'package:flutter_notification_channel/notification_importance.dart'
     as imp;
@@ -17,7 +19,6 @@ class AwesomeNotificationService {
     channelKey: "basic_channel",
     channelName: "Ivf Notification",
     channelDescription: "Notification channel  for default notifications",
-    defaultColor: Colors.red,
     ledColor: Colors.blue,
   );
 
@@ -27,22 +28,13 @@ class AwesomeNotificationService {
       channel
     ], channelGroups: [
       NotificationChannelGroup(
-        channelGroupKey: "basic_channel_group",
+        channelGroupKey: "basic_channel",
         channelGroupName: "Ivf Notification",
       ),
     ]);
     String fcmToken = await FirebaseMessaging.instance.getToken() ?? "";
     print("FCM := $fcmToken");
     await AwesomeNotificationHandler.init();
-    AwesomeNotifications().setListeners(
-      onActionReceivedMethod: AwesomeNotificationHandler.onActionReceivedMethod,
-      onNotificationCreatedMethod:
-          AwesomeNotificationHandler.onNotificationCreatedMethod,
-      onNotificationDisplayedMethod:
-          AwesomeNotificationHandler.onNotificationDisplayedMethod,
-      onDismissActionReceivedMethod:
-          AwesomeNotificationHandler.onDismissActionReceivedMethod,
-    );
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       AwesomeNotificationService.showNotification(
         message: message,
@@ -51,7 +43,35 @@ class AwesomeNotificationService {
   }
 
   static Future<void> showNotification({required RemoteMessage message}) async {
+    Map<String, String> dict = {};
+    if (!isNullEmptyOrFalse(message.data)) {
+      dict["title"] = message.data["title"];
+      dict["body"] = message.data["body"];
+      dict["id"] = message.data["id"];
+    }
     print(message);
+    AwesomeNotifications().createNotification(
+        content: NotificationContent(
+          id: Random().nextInt(100),
+          channelKey: "basic_channel",
+          title: dict["title"],
+          body: dict["body"],
+          payload: dict,
+          autoDismissible: true,
+          category: NotificationCategory.Recommendation,
+          displayOnForeground: true,
+          displayOnBackground: true,
+        ),
+        actionButtons: [
+          NotificationActionButton(
+            key: "show_details",
+            label: "Data",
+            isDangerousOption: true,
+            actionType: ActionType.DismissAction,
+            requireInputText: true,
+            autoDismissible: true,
+          ),
+        ]);
   }
 
   static requestPermission() async {

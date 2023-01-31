@@ -5,6 +5,7 @@ import 'package:ivf_project/app/constants/sizeConstant.dart';
 const String baseUrl = "https://api.kanu.app/api/v1/";
 
 class ApiConstant {
+  static GlobalKey<NavigatorState> globalKey = GlobalKey<NavigatorState>();
   static const loginApi = "login/";
   static const profileCheckApi = "profile/";
   static const createAccountApi = "account/create/";
